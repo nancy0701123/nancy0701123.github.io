@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matata Media</title>
+
+<!-- ✅ favicon -->
+<link rel="icon" href="logo.png">
+
+<style>
+* {margin:0;padding:0;box-sizing:border-box;}
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  color:#111;
+}
+
+/* ===== NAV ===== */
+header {
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  padding:20px 60px;
+  z-index:1000;
+  background:rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+}
+
+header h2 {
+  font-size:30px;
+  color:white;
+}
+
+nav a {
+  color:white;
+  margin-left:25px;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+/* ===== 第一屏 ===== */
+.hero-about {
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding:140px 60px;
+  background:linear-gradient(135deg,#ff7a18,#ffb347);
+  color:white;
+}
+
+.about-container {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+  gap:60px;
+}
+
+/* 文字动画 */
+.fade-up {
+  opacity:0;
+  transform:translateY(30px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.fade-up.delay1 { animation-delay:0.2s; }
+.fade-up.delay2 { animation-delay:0.4s; }
+
+@keyframes fadeUp {
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.about-text h1 {
+  font-size:56px;
+  margin-bottom:20px;
+}
+
+.slogan {
+  font-size:22px;
+  margin-bottom:25px;
+}
+
+.about-text p {
+  font-size:18px;
+  line-height:1.8;
+  max-width:600px;
+}
+
+/* logo */
+.about-image img {
+  max-width:340px;
+  animation: glow 2.5s infinite ease-in-out;
+}
+
+@keyframes glow {
+  0% { box-shadow:0 0 20px rgba(255,255,255,0.4);}
+  50% { box-shadow:0 0 60px rgba(255,255,255,0.9);}
+  100% { box-shadow:0 0 20px rgba(255,255,255,0.4);}
+}
+
+/* ===== 页面渐变 ===== */
+.section {
+  padding:120px 60px;
+  position:relative;
+}
+
+.section::before {
+  content:"";
+  position:absolute;
+  top:-60px;
+  left:0;
+  width:100%;
+  height:60px;
+  background:linear-gradient(to bottom, rgba(255,179,71,0.25), transparent);
+}
+
+/* ===== 滚动logo ===== */
+.brands {
+  background:#fff;
+  overflow:hidden;
+}
+
+.brands h2 {
+  text-align:center;
+  margin-bottom:40px;
+  font-size:36px;
+}
+
+.logo-track {
+  display:flex;
+  gap:60px;
+  width:max-content;
+  animation: scroll 20s linear infinite;
+}
+
+.logo-track img {
+  height:50px;
+  object-fit:contain;
+  opacity:0.6;
+  transition:0.3s;
+}
+
+.logo-track img:hover {
+  opacity:1;
+  transform:scale(1.05);
+}
+
+@keyframes scroll {
+  0% { transform:translateX(0); }
+  100% { transform:translateX(-50%); }
+}
+
+/* SERVICES */
+.cards {
+  display:flex;
+  gap:30px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:50px;
+}
+
+.card {
+  width:300px;
+  padding:40px;
+  background:#f5f5f5;
+  border-radius:20px;
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:translateY(-8px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* ===== CONTACT ===== */
+#contact {
+  text-align:center;
+}
+
+#contact h2 {
+  margin-bottom:20px;
+}
+
+#contact p {
+  color:#555;
+  font-size:18px;
+}
+
+#contact a {
+  color:#ff7a18;
+  text-decoration:none;
+}
+
+#contact a:hover {
+  text-decoration:underline;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .about-container {
+    flex-direction:column;
+    text-align:center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>Matata Media</h2>
+  <nav>
+    <a href="#brands">Brands</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- 第一屏 -->
+<section class="hero-about">
+  <div class="about-container">
+
+    <div class="about-text">
+      <h1 class="fade-up">Matata Media</h1>
+      <div class="slogan fade-up delay1">
+        Driving Growth Through Data & Creativity
+      </div>
+
+      <p class="fade-up delay2">
+        A global mobile and web advertising platform focused on user acquisition and engagement. 
+        We deliver high-quality, targeted traffic powered by technology and deep industry expertise, 
+        helping brands scale efficiently and build long-term growth.
+      </p>
+    </div>
+
+    <div class="about-image">
+      <img src="logo.png">
+    </div>
+
+  </div>
+</section>
+
+<!-- Brands -->
+<section id="brands" class="section brands">
+  <h2>Trusted by Top Brands</h2>
+
+  <div class="logo-track">
+    <img src="one.png">
+    <img src="two.png">
+    <img src="three.png">
+    <img src="four.png">
+    <img src="five.png">
+    <img src="six.png">
+
+    <img src="one.png">
+    <img src="two.png">
+    <img src="three.png">
+    <img src="four.png">
+    <img src="five.png">
+    <img src="six.png">
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="section">
+  <h2 style="text-align:center;">Our Services</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Marketing</h3>
+      <p>Growth, Ads, Strategy</p>
+    </div>
+
+    <div class="card">
+      <h3>Content</h3>
+      <p>Video & Social Media</p>
+    </div>
+
+    <div class="card">
+      <h3>Technology</h3>
+      <p>Web & Systems</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section">
+  <h2>Contact Us</h2>
+
+  <p>Feel free to reach out for partnerships and collaborations.</p>
+
+  <div style="margin-top:30px;font-size:18px;line-height:2;">
+    📧 <a href="mailto:nancy@matata.media">nancy@matata.media</a><br>
+    📧 <a href="mailto:adop@matata.media">adop@matata.media</a><br>
+    🔗 <a href="https://www.linkedin.com/company/matata-media/?viewAsMember=true" target="_blank">
+      LinkedIn
+    </a>
+  </div>
+</section>
+
+</body>
+</html>
